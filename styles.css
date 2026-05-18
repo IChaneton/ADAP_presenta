@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  font-family: sans-serif;
+}
+
+#symbol {
+  font-size: 10vh;
+  cursor: pointer;
+  user-select: none;
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  background: rgba(0,0,0,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  transform: translate(-50%, -50%); 
+}
+
+#modal img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.9;
+  border-radius: 3%;
+  border: 1px solid black;
+}
+@media screen and (max-width: 768px) {
+  #modal {
+    width: 90%;
+    height: 90%;
+  }
+  
+}
