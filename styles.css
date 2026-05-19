@@ -47,6 +47,14 @@ body {
   border-radius: 3%;
   border: 1px solid black;
 }
+#version {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: rgb(155, 155, 155);
+  z-index: 3;
+}
 @media screen and (max-width: 1000px) {
   #modal {
     width: 90%;
