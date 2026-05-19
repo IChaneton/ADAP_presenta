@@ -35,7 +35,7 @@ body {
   border-radius: 3%;
   border: 1px solid black;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   #modal {
     width: 90%;
     height: 90%;
