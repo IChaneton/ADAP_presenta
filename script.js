@@ -88,9 +88,35 @@ modal.addEventListener("click", () => {
   closeModal();
  
 });
-background.addEventListener("click", () => {
-  speed = speed * 2;
-  if (speed > 8000) speed = 8000;
+// background.addEventListener("click", () => {
+//   speed = speed * 2;
+//   if (speed > 8000) speed = 8000;
+
+//   startLoop();
+// });
+
+background.addEventListener("click", (e) => {
+  const x = e.clientX / window.innerWidth;   // 0 → 1
+  const y = e.clientY / window.innerHeight;  // 0 → 1
+
+  // convertir a rango -1 → +1
+  const xForce = (x - 1) * 2; // izquierda (-) → derecha (+)
+  const yForce = (1 - y) * 2; // abajo (-) → arriba (+)
+
+  // combinar fuerzas
+  const force = xForce + yForce;
+
+  // aplicar al speed
+  if (force > 0) {
+    // acelerar
+    speed *= 1 - (force);
+  } else {
+    // desacelerar
+    speed *= 1 - (force); // force negativo → aumenta speed
+  }
+
+  // límites
+  speed = Math.max(50, Math.min(8000, speed));
 
   startLoop();
 });
