@@ -88,4 +88,15 @@ modal.addEventListener("click", () => {
 });
 
 // Inicial
-startLoop();
+// startLoop();
+
+let started = false;
+
+function startExperience() {
+  if (!started) {
+    started = true;
+    startLoop();
+  }
+}
+
+document.addEventListener("click", startExperience, { once: true });
