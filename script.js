@@ -22,6 +22,7 @@ function shuffle(array) {
 const symbolEl = document.getElementById("symbol");
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
+const background = document.getElementById("background");
 
 function playSymbol() {
   symbolEl.textContent = symbols[index];
@@ -86,17 +87,16 @@ modal.addEventListener("click", () => {
   closeModal();
  
 });
+background.addEventListener("click", () => {
+  speed = speed * 2;
+  if (speed > 8000) speed = 8000;
+
+  startLoop();
+});
+
+
+
 
 // Inicial
 startLoop();
 
-// let started = false;
-
-// function startExperience() {
-//   if (!started) {
-//     started = true;
-//     startLoop();
-//   }
-// }
-
-// document.addEventListener("click", startExperience, { once: true });
