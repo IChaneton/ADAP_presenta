@@ -7,7 +7,7 @@ let sequencePlaying = true;
 
 
 // Sonido único para la secuencia
-const sequenceAudio = new Audio("/Audio/sonido_loop.wav");
+const sequenceAudio = new Audio("Audio/sonido_loop.wav");
 
 // Audio actual del modal (para poder cortarlo)
 let modalAudio = null;
@@ -63,11 +63,11 @@ symbolEl.addEventListener("click", () => {
   // Buscar media asignada
   let mapped = mediaMap[currentIndex];
 
-  modalImg.src = `/Imagen/imagen_${mapped+1}.jpg`;
+  modalImg.src = `Imagen/imagen_${mapped+1}.jpg`;
   modal.style.visibility = "visible";
 
   // Crear y reproducir audio del modal
-  modalAudio = new Audio(`/Audio/audio_${mapped+1}.wav`);
+  modalAudio = new Audio(`Audio/audio_${mapped+1}.wav`);
   modalAudio.play();
 
   // Cerrar al terminar
