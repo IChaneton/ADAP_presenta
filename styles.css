@@ -1,3 +1,7 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -60,9 +64,9 @@ body {
   z-index: 3;
 }
 
-#symbol, #modal, #modalImg {
+body {
   user-select: none;
-  -webkit-user-select: none; /* Safari */
+  -webkit-user-select: none;
 }
 
 @media screen and (max-width: 1000px) {
