@@ -84,6 +84,7 @@ symbolEl.addEventListener("click", () => {
 
 // Cerrar modal al clickearlo
 modal.addEventListener("click", () => {
+  modalImg.src = "";
   closeModal();
  
 });
