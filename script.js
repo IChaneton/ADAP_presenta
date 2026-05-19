@@ -100,8 +100,8 @@ background.addEventListener("click", (e) => {
   const y = e.clientY / window.innerHeight;  // 0 → 1
 
   // convertir a rango -1 → +1
-  const xForce = (x - 1) * 2; // izquierda (-) → derecha (+)
-  const yForce = (1 - y) * 2; // abajo (-) → arriba (+)
+  const xForce = (x - 0.5) * 2; // izquierda (-) → derecha (+)
+  const yForce = (0.5 - y) * 2; // abajo (-) → arriba (+)
 
   // combinar fuerzas
   const force = xForce + yForce;
@@ -109,7 +109,7 @@ background.addEventListener("click", (e) => {
   // aplicar al speed
   if (force > 0) {
     // acelerar
-    speed *= 1 - (force);
+    speed *= 1 - (force * 0.5);
   } else {
     // desacelerar
     speed *= 1 - (force); // force negativo → aumenta speed
